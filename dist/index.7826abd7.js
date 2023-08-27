@@ -2955,21 +2955,31 @@ const jsxElement = /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
     lineNumber: 4,
     columnNumber: 20
 }, undefined);
-const ReactComponent = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-        id: "heading",
-        children: "This is react heading with jsx, ReactComponent."
-    }, void 0, false, {
+const variable = "here";
+const ReactComponent = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        id: "container",
+        children: [
+            variable,
+            jsxElement,
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                id: "heading",
+                children: "This is react heading with jsx, ReactComponent."
+            }, void 0, false, {
+                fileName: "App.js",
+                lineNumber: 10,
+                columnNumber: 5
+            }, undefined)
+        ]
+    }, void 0, true, {
         fileName: "App.js",
         lineNumber: 7,
-        columnNumber: 12
+        columnNumber: 3
     }, undefined);
-};
 _c = ReactComponent;
 const root = (0, _clientDefault.default).createRoot(document.getElementById("root"));
 root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(ReactComponent, {}, void 0, false, {
     fileName: "App.js",
-    lineNumber: 11,
+    lineNumber: 15,
     columnNumber: 13
 }, undefined));
 var _c;
