@@ -2955,8 +2955,25 @@ const jsxElement = /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
     lineNumber: 4,
     columnNumber: 20
 }, undefined);
+const ReactComponent = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+        id: "heading",
+        children: "This is react heading with jsx, ReactComponent."
+    }, void 0, false, {
+        fileName: "App.js",
+        lineNumber: 7,
+        columnNumber: 12
+    }, undefined);
+};
+_c = ReactComponent;
 const root = (0, _clientDefault.default).createRoot(document.getElementById("root"));
-root.render(jsxElement);
+root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(ReactComponent, {}, void 0, false, {
+    fileName: "App.js",
+    lineNumber: 11,
+    columnNumber: 13
+}, undefined));
+var _c;
+$RefreshReg$(_c, "ReactComponent");
 
   $parcel$ReactRefreshHelpers$c1db.postlude(module);
 } finally {
