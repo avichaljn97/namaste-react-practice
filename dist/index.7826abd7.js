@@ -2955,8 +2955,29 @@ const jsxElement = /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
     lineNumber: 4,
     columnNumber: 20
 }, undefined);
-const variable = "here";
-const ReactComponent = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+const JsxComponent = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        id: "component",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(ReactComponent, {}, void 0, false, {
+                fileName: "App.js",
+                lineNumber: 8,
+                columnNumber: 5
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                children: "We are inside jsxComponent"
+            }, void 0, false, {
+                fileName: "App.js",
+                lineNumber: 9,
+                columnNumber: 5
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "App.js",
+        lineNumber: 7,
+        columnNumber: 3
+    }, undefined);
+_c = JsxComponent;
+let ReactComponent = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         id: "container",
         children: [
             variable,
@@ -2966,24 +2987,26 @@ const ReactComponent = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 children: "This is react heading with jsx, ReactComponent."
             }, void 0, false, {
                 fileName: "App.js",
-                lineNumber: 10,
+                lineNumber: 17,
                 columnNumber: 5
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "App.js",
-        lineNumber: 7,
+        lineNumber: 14,
         columnNumber: 3
     }, undefined);
-_c = ReactComponent;
+_c1 = ReactComponent;
+const variable = "here";
 const root = (0, _clientDefault.default).createRoot(document.getElementById("root"));
-root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(ReactComponent, {}, void 0, false, {
+root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(JsxComponent, {}, void 0, false, {
     fileName: "App.js",
-    lineNumber: 15,
+    lineNumber: 23,
     columnNumber: 13
 }, undefined));
-var _c;
-$RefreshReg$(_c, "ReactComponent");
+var _c, _c1;
+$RefreshReg$(_c, "JsxComponent");
+$RefreshReg$(_c1, "ReactComponent");
 
   $parcel$ReactRefreshHelpers$c1db.postlude(module);
 } finally {
