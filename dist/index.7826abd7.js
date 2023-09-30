@@ -2947,66 +2947,150 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _client = require("react-dom/client");
 var _clientDefault = parcelHelpers.interopDefault(_client);
-const jsxElement = /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-    id: "heading",
-    children: "This is react heading with jsx."
-}, void 0, false, {
-    fileName: "App.js",
-    lineNumber: 4,
-    columnNumber: 20
-}, undefined);
-const JsxComponent = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        id: "component",
+const AppLayout = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "app-layout",
         children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(ReactComponent, {}, void 0, false, {
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(AppHeader, {}, void 0, false, {
+                fileName: "App.js",
+                lineNumber: 7,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(AppBody, {}, void 0, false, {
                 fileName: "App.js",
                 lineNumber: 8,
-                columnNumber: 5
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                children: "We are inside jsxComponent"
-            }, void 0, false, {
-                fileName: "App.js",
-                lineNumber: 9,
-                columnNumber: 5
+                columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "App.js",
-        lineNumber: 7,
-        columnNumber: 3
+        lineNumber: 6,
+        columnNumber: 5
     }, undefined);
-_c = JsxComponent;
-let ReactComponent = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        id: "container",
-        children: [
-            variable,
-            jsxElement,
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                id: "heading",
-                children: "This is react heading with jsx, ReactComponent."
-            }, void 0, false, {
-                fileName: "App.js",
-                lineNumber: 17,
-                columnNumber: 5
-            }, undefined)
-        ]
-    }, void 0, true, {
+};
+_c = AppLayout;
+const AppHeader = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "app-header",
+        children: "here the AppHeader"
+    }, void 0, false, {
         fileName: "App.js",
         lineNumber: 14,
-        columnNumber: 3
+        columnNumber: 10
     }, undefined);
-_c1 = ReactComponent;
-const variable = "here";
+};
+_c1 = AppHeader;
+const SearchResultCardHolder = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "search-result",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(HourlyCard, {}, void 0, false, {
+                fileName: "App.js",
+                lineNumber: 20,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(HourlyCard, {}, void 0, false, {
+                fileName: "App.js",
+                lineNumber: 21,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(HourlyCard, {}, void 0, false, {
+                fileName: "App.js",
+                lineNumber: 22,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(HourlyCard, {}, void 0, false, {
+                fileName: "App.js",
+                lineNumber: 23,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(HourlyCard, {}, void 0, false, {
+                fileName: "App.js",
+                lineNumber: 24,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(HourlyCard, {}, void 0, false, {
+                fileName: "App.js",
+                lineNumber: 25,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(HourlyCard, {}, void 0, false, {
+                fileName: "App.js",
+                lineNumber: 26,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(HourlyCard, {}, void 0, false, {
+                fileName: "App.js",
+                lineNumber: 27,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "App.js",
+        lineNumber: 19,
+        columnNumber: 5
+    }, undefined);
+};
+_c2 = SearchResultCardHolder;
+const HourlyCard = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "hour-card",
+        children: "This is a single hour card."
+    }, void 0, false, {
+        fileName: "App.js",
+        lineNumber: 33,
+        columnNumber: 10
+    }, undefined);
+};
+_c3 = HourlyCard;
+const AppBody = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "app-body",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(SearchBar, {}, void 0, false, {
+                fileName: "App.js",
+                lineNumber: 39,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(SearchResultCardHolder, {}, void 0, false, {
+                fileName: "App.js",
+                lineNumber: 40,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "App.js",
+        lineNumber: 38,
+        columnNumber: 5
+    }, undefined);
+};
+_c4 = AppBody;
+const SearchBar = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+        type: "text",
+        id: "search-bar",
+        className: "search-bar",
+        placeholder: "Client ID"
+    }, void 0, false, {
+        fileName: "App.js",
+        lineNumber: 47,
+        columnNumber: 5
+    }, undefined);
+};
+_c5 = SearchBar;
 const root = (0, _clientDefault.default).createRoot(document.getElementById("root"));
-root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(JsxComponent, {}, void 0, false, {
+root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(AppLayout, {}, void 0, false, {
     fileName: "App.js",
-    lineNumber: 23,
+    lineNumber: 56,
     columnNumber: 13
 }, undefined));
-var _c, _c1;
-$RefreshReg$(_c, "JsxComponent");
-$RefreshReg$(_c1, "ReactComponent");
+var _c, _c1, _c2, _c3, _c4, _c5;
+$RefreshReg$(_c, "AppLayout");
+$RefreshReg$(_c1, "AppHeader");
+$RefreshReg$(_c2, "SearchResultCardHolder");
+$RefreshReg$(_c3, "HourlyCard");
+$RefreshReg$(_c4, "AppBody");
+$RefreshReg$(_c5, "SearchBar");
 
   $parcel$ReactRefreshHelpers$c1db.postlude(module);
 } finally {
