@@ -1,4 +1,4 @@
 node_modules
 cred
 dist
-.parcel-cache/*
+.parcel-cache/
