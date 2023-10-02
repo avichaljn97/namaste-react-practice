@@ -2980,66 +2980,107 @@ const AppHeader = ()=>{
     }, undefined);
 };
 _c1 = AppHeader;
+const dataInCard = [
+    {
+        datePart: "2023-09-01",
+        hourpart: "0",
+        eventName: "click",
+        eventCount: "10",
+        costType: "CPC",
+        totalCost: "11",
+        remainingBudget: "200",
+        minCost: "1.1",
+        maxCost: "1.1",
+        isFirstRow: false
+    },
+    {
+        datePart: "2023-09-01",
+        hourpart: "1",
+        eventName: "click",
+        eventCount: "15",
+        costType: "CPC",
+        minCost: "1.0",
+        maxCost: "1.0",
+        totalCost: "15",
+        remainingBudget: "185",
+        isFirstRow: false
+    },
+    {
+        datePart: "2023-09-01",
+        hourpart: "2",
+        eventName: "click",
+        eventCount: "10",
+        costType: "CPC",
+        minCost: "10",
+        maxCost: "20",
+        totalCost: "15",
+        remainingBudget: "-15",
+        isFirstRow: false
+    },
+    {
+        datePart: "2023-09-01",
+        hourpart: "3",
+        eventName: "click",
+        eventCount: "5",
+        costType: "CPC",
+        minCost: "1",
+        maxCost: "2",
+        totalCost: "6",
+        remainingBudget: "-21",
+        isFirstRow: false
+    }
+];
 const SearchResultCardHolder = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "search-result",
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(HourlyCard, {}, void 0, false, {
+        children: dataInCard.map((eachCard)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(HourlyCard, {
+                overSpendDataRow: eachCard
+            }, eachCard.datePart + "_" + eachCard.hourpart + "_" + eachCard.costType, false, {
                 fileName: "App.js",
-                lineNumber: 20,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(HourlyCard, {}, void 0, false, {
-                fileName: "App.js",
-                lineNumber: 21,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(HourlyCard, {}, void 0, false, {
-                fileName: "App.js",
-                lineNumber: 22,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(HourlyCard, {}, void 0, false, {
-                fileName: "App.js",
-                lineNumber: 23,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(HourlyCard, {}, void 0, false, {
-                fileName: "App.js",
-                lineNumber: 24,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(HourlyCard, {}, void 0, false, {
-                fileName: "App.js",
-                lineNumber: 25,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(HourlyCard, {}, void 0, false, {
-                fileName: "App.js",
-                lineNumber: 26,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(HourlyCard, {}, void 0, false, {
-                fileName: "App.js",
-                lineNumber: 27,
-                columnNumber: 7
-            }, undefined)
-        ]
-    }, void 0, true, {
+                lineNumber: 71,
+                columnNumber: 9
+            }, undefined))
+    }, void 0, false, {
         fileName: "App.js",
-        lineNumber: 19,
+        lineNumber: 69,
         columnNumber: 5
     }, undefined);
 };
 _c2 = SearchResultCardHolder;
-const HourlyCard = ()=>{
+const HourlyCard = (props)=>{
+    const { overSpendDataRow } = props;
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "hour-card",
-        children: "This is a single hour card."
+        children: /* <div className="each-element">{overSpendDataRow.datePart}</div>
+      <div className="each-element">{overSpendDataRow.hourpart}</div>
+      <div className="each-element">
+        {overSpendDataRow.eventName}
+      </div>
+      <div className="each-element">
+        {overSpendDataRow.eventCount}
+      </div>
+      <div className="each-element">{overSpendDataRow.costType}</div>
+      <div className="each-element">{overSpendDataRow.minCost}</div>
+      <div className="each-element">{overSpendDataRow.maxCost}</div>
+      <div className="-element">
+        {overSpendDataRow.totalCost}
+      </div>
+      <div className="each-element">
+        {overSpendDataRow.remainingBudget}
+      </div> */ Object.keys(overSpendDataRow).map((ek)=>{
+            return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "each-element",
+                children: overSpendDataRow[ek]
+            }, ek, false, {
+                fileName: "App.js",
+                lineNumber: 100,
+                columnNumber: 18
+            }, undefined);
+        })
     }, void 0, false, {
         fileName: "App.js",
-        lineNumber: 33,
-        columnNumber: 10
+        lineNumber: 80,
+        columnNumber: 5
     }, undefined);
 };
 _c3 = HourlyCard;
@@ -3049,18 +3090,18 @@ const AppBody = ()=>{
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(SearchBar, {}, void 0, false, {
                 fileName: "App.js",
-                lineNumber: 39,
+                lineNumber: 110,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(SearchResultCardHolder, {}, void 0, false, {
                 fileName: "App.js",
-                lineNumber: 40,
+                lineNumber: 111,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "App.js",
-        lineNumber: 38,
+        lineNumber: 109,
         columnNumber: 5
     }, undefined);
 };
@@ -3073,7 +3114,7 @@ const SearchBar = ()=>{
         placeholder: "Client ID"
     }, void 0, false, {
         fileName: "App.js",
-        lineNumber: 47,
+        lineNumber: 118,
         columnNumber: 5
     }, undefined);
 };
@@ -3081,7 +3122,7 @@ _c5 = SearchBar;
 const root = (0, _clientDefault.default).createRoot(document.getElementById("root"));
 root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(AppLayout, {}, void 0, false, {
     fileName: "App.js",
-    lineNumber: 56,
+    lineNumber: 127,
     columnNumber: 13
 }, undefined));
 var _c, _c1, _c2, _c3, _c4, _c5;
