@@ -6,8 +6,13 @@ import WalletBalanceCard from "./WalletBalanceCard";
 import useWalletBalance from "../utils/useWalletBalance";
 import useAllEvents from "../utils/useAllEvents";
 import SearchResultCardHolder from "./SearchResultCardHolder";
+import Option from "./Option";
 
 const AppBody = () => {
+  const [searchInitiated, setSearchInitiated] = useState({
+    flag: false,
+    clientId: "",
+  });
   const [clientDataFromSearchBar, setClientDataFromSearchBar] = useState({});
   const [walletBalanceDisplay, setWalletBalanceDisplay] = useState({
     walletBalance: 0,
@@ -15,24 +20,41 @@ const AppBody = () => {
     isActive: false,
   });
   const [dateOfOverSpend, setDateOfOverSpend] = useState("");
+  const [spendEvents, setSpendEvents] = useState(null);
+  const [costFilter, setCostFilter] = useState("USD");
+  const [displayCurrencyFilter, setDisplayCurrencyFilter] = useState({
+    flag: false,
+  });
+  const [displayEventData, setDisplayEventData] = useState({
+    flag: false,
+  });
 
   const clientDataHandler = async (clientData) => {
-    setClientDataFromSearchBar(clientData);
-    const { walletBalance, walletBalanceUSD, currencyConversionFactor } =
-      await useWalletBalance(clientData, dateOfOverSpend);
+    if (clientData.clientId !== undefined) {
+      setClientDataFromSearchBar(clientData);
 
-    const res = await useAllEvents(
-      clientData,
-      dateOfOverSpend,
-      currencyConversionFactor
-    );
+      const { walletBalance, walletBalanceUSD, currencyConversionFactor } =
+        await useWalletBalance(clientData, dateOfOverSpend);
 
-    //console.log(requestId);
-    // setWalletBalanceDisplay({
-    //   walletBalance: walletBalance,
-    //   walletBalanceUSD: walletBalanceUSD,
-    //   isActive: true,
-    // });
+      setDisplayCurrencyFilter({ flag: true, clientId: clientData.clientId });
+
+      setWalletBalanceDisplay({
+        walletBalance: walletBalance,
+        walletBalanceUSD: walletBalanceUSD,
+        isActive: true,
+      });
+
+      const res = await useAllEvents(
+        clientData,
+        dateOfOverSpend,
+        currencyConversionFactor
+      );
+
+      setDisplayEventData({ flag: true });
+
+      console.log(res);
+      setSpendEvents(res?.result);
+    }
   };
 
   return (
@@ -40,9 +62,32 @@ const AppBody = () => {
       <SearchBar
         getClientDetails={clientDataHandler}
         getDateOfOverSpend={setDateOfOverSpend}
+        isSearchInititated={setSearchInitiated}
+        setWalletBalanceDisplay={setWalletBalanceDisplay}
+        setDisplayEventData={setDisplayEventData}
       />
-      <ClientDetailCard clientDetail={clientDataFromSearchBar} />
-      <WalletBalanceCard walletBalanceDisplayDetails={walletBalanceDisplay} />
+      <ClientDetailCard
+        clientDetail={clientDataFromSearchBar}
+        isSearchInititated={searchInitiated}
+      />
+      <Option
+        displayCostFilter={setCostFilter}
+        clientCurrency={clientDataFromSearchBar.currencyCode}
+        showOption={displayCurrencyFilter}
+        isSearchInititated={searchInitiated}
+      />
+      <WalletBalanceCard
+        walletBalanceDisplayDetails={walletBalanceDisplay}
+        displayCostFilter={costFilter}
+        isSearchInititated={searchInitiated}
+      />
+      <SearchResultCardHolder
+        dataInCard={spendEvents}
+        displayCostFilter={costFilter}
+        displayEventData={displayEventData}
+        isSearchInititated={searchInitiated}
+        walletBalanceData={walletBalanceDisplay}
+      />
     </div>
   );
 };

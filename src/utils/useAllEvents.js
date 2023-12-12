@@ -11,9 +11,9 @@ const useAllEvents = (
   currencyConversionFactor
 ) => {
   const { clientId, sellerId, marketplaceClientId, timezone } = clientData;
-  console.log(dateOfOverSpend);
+  console.log(currencyConversionFactor);
   const fetchData = fetch(
-    `${Constants.BACKEND_ENDPOINT}postFetchCall?clientId=${clientId}&marketplaceClientId=${marketplaceClientId}&sellerId=${sellerId}&fromDate="${dateOfOverSpend}"&timezone="${timezone}"`
+    `${Constants.BACKEND_ENDPOINT}postFetchCall?jsonQuery={"clientId":${clientId},"marketplaceClientId":${marketplaceClientId},"sellerId":"${sellerId}","fromDate":"${dateOfOverSpend}","timezone":"${timezone}"}`
   )
     .then((response) => {
       return response.json();
@@ -25,7 +25,10 @@ const useAllEvents = (
       return useJobChecker(requestId);
     })
     .then((response) => {
-      return useProcessAndGetEvents(response);
+      return useProcessAndGetEvents(response.requestId,currencyConversionFactor,timezone);
+    })
+    .catch((exception)=>{
+      return exception.message;
     });
   return fetchData;
 };

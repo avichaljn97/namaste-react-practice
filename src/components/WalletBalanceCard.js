@@ -1,20 +1,24 @@
-const WalletBalanceCard = ({ walletBalanceDisplayDetails }) => {
+import Shimmer from "./Shimmer";
+const WalletBalanceCard = (props) => {
+  const { walletBalanceDisplayDetails, displayCostFilter, isSearchInititated } =
+    props;
+ // console.log(props);
+
+  if (!walletBalanceDisplayDetails.isActive && isSearchInititated.flag)
+    return <Shimmer />;
+  const walletBalance =
+    displayCostFilter === "USD"
+      ? walletBalanceDisplayDetails.walletBalanceUSD
+      : walletBalanceDisplayDetails.walletBalance;
   return (
     <div
       className={
         "wallet-balance-card " +
-        (walletBalanceDisplayDetails.isActive ? "show-card"
-          : "")
+        (walletBalanceDisplayDetails.isActive ? "show-card" : "")
       }
     >
-      <div className="client-currency-card">
-        Wallet balance (in client currency):{" "}
-        {walletBalanceDisplayDetails.walletBalance.toFixed(3)}
-      </div>
-
-      <div className="usd-card">
-        Wallet balance (in USD):{" "}
-        {walletBalanceDisplayDetails.walletBalanceUSD.toFixed(3)}
+      <div className="currency-card">
+        Wallet balance: {walletBalance.toFixed(3) + " " + displayCostFilter}
       </div>
     </div>
   );

@@ -17,14 +17,14 @@ const useJobChecker = (requestId) => {
         })
         .then((response) => {
           counter++;
-          if (response.responseType === "Fetch" || counter > 19) {
+          if (response.responseType === "Fetch" || counter > 30) {
             clearInterval(jobIntervalId);
             resolve(response);
           }
         })
         .catch((error) => {
           clearInterval(jobIntervalId);
-          reject(error);
+          reject(new Error("Query taking too long to run."));
         });
     }
   });
