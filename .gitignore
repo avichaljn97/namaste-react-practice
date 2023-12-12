@@ -3,3 +3,4 @@ node_modules
 cred
 dist/
 src/components/mockdata.js
+src/components/Constants.js
